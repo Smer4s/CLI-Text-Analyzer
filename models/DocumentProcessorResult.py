@@ -2,7 +2,6 @@ from dataclasses import dataclass, field
 from models.Document import Document
 from models.DocumentStatus import DocumentStatus
 from models.WordCountPair import WordCountPair
-import json
 
 @dataclass
 class DocumentProcessorResult(object):
