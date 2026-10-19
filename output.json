@@ -1,1 +1,65 @@
-[{"document": {"id": "doc-2", "text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome"}, "symbol_count": 236, "word_count": 31, "unique_word_count": 6, "normalized_text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome", "max_frequent_words": [{"word": "programming", "count": 10}, {"word": "async", "count": 5}, {"word": "is", "count": 5}, {"word": "awesome", "count": 5}, {"word": "apple", "count": 4}], "document_status": "Success"}, {"document": {"id": "doc-3", "text": "   "}, "symbol_count": 0, "word_count": 0, "unique_word_count": 0, "normalized_text": "", "max_frequent_words": [], "document_status": "Failed"}]
+[
+    {
+        "document": {
+            "id": "",
+            "text": ""
+        },
+        "symbol_count": 0,
+        "word_count": 0,
+        "unique_word_count": 0,
+        "normalized_text": "",
+        "max_frequent_words": [],
+        "document_status": "Failed",
+        "error_code": "404",
+        "error_message": "Failed Document Parsing"
+    },
+    {
+        "document": {
+            "id": "doc-2",
+            "text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome"
+        },
+        "symbol_count": 236,
+        "word_count": 31,
+        "unique_word_count": 6,
+        "normalized_text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome",
+        "max_frequent_words": [
+            {
+                "word": "programming",
+                "count": 10
+            },
+            {
+                "word": "async",
+                "count": 5
+            },
+            {
+                "word": "is",
+                "count": 5
+            },
+            {
+                "word": "awesome",
+                "count": 5
+            },
+            {
+                "word": "apple",
+                "count": 4
+            }
+        ],
+        "document_status": "Success",
+        "error_code": "",
+        "error_message": ""
+    },
+    {
+        "document": {
+            "id": "doc-3",
+            "text": "   "
+        },
+        "symbol_count": 0,
+        "word_count": 0,
+        "unique_word_count": 0,
+        "normalized_text": "",
+        "max_frequent_words": [],
+        "document_status": "Failed",
+        "error_code": "400",
+        "error_message": "Document is empty"
+    }
+]

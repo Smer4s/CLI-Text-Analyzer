@@ -13,3 +13,5 @@ class DocumentProcessorResult(object):
     normalized_text: str = ''
     max_frequent_words: list[WordCountPair] = field(default_factory=list)
     document_status: DocumentStatus = DocumentStatus.FAILED
+    error_code: str = ''
+    error_message: str = ''

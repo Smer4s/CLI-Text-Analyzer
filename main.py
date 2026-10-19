@@ -20,8 +20,7 @@ def main(parser: argparse.ArgumentParser) -> None:
                 result = process_document(doc)
                 result_docs.append(result)
                 if result.document_status == DocumentStatus.FAILED:
-                    failed += 1
-                    raise DocumentProcessorError(doc)
+                    raise DocumentProcessorError(doc, result.error_message, result.error_code)
                 else:
                     success += 1
             except Exception as e:

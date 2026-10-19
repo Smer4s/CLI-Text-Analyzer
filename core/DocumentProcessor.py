@@ -2,19 +2,20 @@ from models.DocumentStatus import DocumentStatus
 from models.Document import Document
 from models.DocumentProcessorResult import DocumentProcessorResult
 from models.WordCountPair import WordCountPair
+from errors.DocumentProcessorError import DocumentProcessorError
 
 def process_document(doc: Document) -> DocumentProcessorResult:
-    doc_status = get_document_status(doc.text)
-    if doc_status is DocumentStatus.FAILED:
-        return DocumentProcessorResult(doc,document_status=doc_status)
-    normalized_text = normalize_text(doc.text)
-    symbol_count = find_symbol_count(normalized_text)
-    words = find_words(normalized_text)
-    word_count = len(words)
-    unique_word_count = find_unique_word_count(words)
-    max_frequent_words = find_max_frequent_words(words)
-        
-    return DocumentProcessorResult(doc, symbol_count, word_count, unique_word_count, normalized_text, max_frequent_words,doc_status)
+    try:
+        doc_status = get_document_status(doc)
+        normalized_text = normalize_text(doc.text)
+        symbol_count = find_symbol_count(normalized_text)
+        words = find_words(normalized_text)
+        word_count = len(words)
+        unique_word_count = find_unique_word_count(words)
+        max_frequent_words = find_max_frequent_words(words)
+        return DocumentProcessorResult(doc, symbol_count, word_count, unique_word_count, normalized_text, max_frequent_words,doc_status)
+    except DocumentProcessorError as e:
+        return DocumentProcessorResult(doc, error_code=e.error_code, error_message=e.error_message)
     
 def find_symbol_count(text: str) -> int:
     return len(text)
@@ -61,9 +62,12 @@ def find_max_frequent_words(words: list[str], max_count:int = 5) -> list[WordCou
     return sorted_dict[:max_count]
                 
     
-def get_document_status(text:str) -> DocumentStatus:
-    for symbol in text:
+def get_document_status(doc: Document) -> DocumentStatus:
+    if doc.id == '' or doc.text == '':
+        raise DocumentProcessorError(doc, "404", "Failed Document Parsing")
+    
+    for symbol in doc.text:
         if symbol.isspace() is False:
             return DocumentStatus.SUCCESS
                 
-    return DocumentStatus.FAILED
+    raise DocumentProcessorError(doc, "400", "Document is empty")

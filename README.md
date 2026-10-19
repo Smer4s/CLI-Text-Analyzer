@@ -26,12 +26,26 @@
 ### Console Output:
 
     Exception!!! Expected to have a field: 'id'
-    Error!!! Document(id='doc-3', text='   ')
+    Error!!! (Document(id='', text=''), 'Failed Document Parsing', '404')
+    Error!!! (Document(id='doc-3', text='   '), 'Document is empty', '400')
     Successfully wrote 1 documents. 2 were failed!
 
 ### output.json:
-
     [
+        {
+            "document": {
+                "id": "",
+                "text": ""
+            },
+            "symbol_count": 0,
+            "word_count": 0,
+            "unique_word_count": 0,
+            "normalized_text": "",
+            "max_frequent_words": [],
+            "document_status": "Failed",
+            "error_code": "404",
+            "error_message": "Failed Document Parsing"
+        },
         {
             "document": {
                 "id": "doc-2",
@@ -63,7 +77,9 @@
                     "count": 4
                 }
             ],
-            "document_status": "Success"
+            "document_status": "Success",
+            "error_code": "",
+            "error_message": ""
         },
         {
             "document": {
@@ -75,6 +91,8 @@
             "unique_word_count": 0,
             "normalized_text": "",
             "max_frequent_words": [],
-            "document_status": "Failed"
+            "document_status": "Failed",
+            "error_code": "400",
+            "error_message": "Document is empty"
         }
     ]

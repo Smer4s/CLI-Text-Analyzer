@@ -12,6 +12,7 @@ class JsonReader(object):
                         docs.append(Document(doc["id"], doc["text"]))
                     except KeyError as e:
                         print("Exception!!! Expected to have a field:", e)
+                        docs.append(Document())
                 return docs
         except OSError:
             raise FileNotFoundError(path)
