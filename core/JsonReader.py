@@ -9,8 +9,15 @@ class JsonReader(object):
         try:
             with open(path) as f:
                 file_content = f.read()
-                docs = [Document(doc["id"], doc["text"]) for doc in json.loads(file_content)]
+                docs: list[Document] = []
+                for doc in json.loads(file_content):
+                    try:
+                        docs.append(Document(doc["id"], doc["text"]))
+                    except KeyError as e:
+                        print("Exception!!! Expected to have a field:", e)
                 return docs
         except OSError:
-            raise FileNotFoundError(path)   
+            raise FileNotFoundError(path)
+        
+            
     

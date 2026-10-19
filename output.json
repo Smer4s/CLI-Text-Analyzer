@@ -1,31 +1,6 @@
 [
     {
         "document": {
-            "id": "doc-1",
-            "text": "   Hello hello Python    World   "
-        },
-        "symbol_count": 24,
-        "word_count": 4,
-        "unique_word_count": 3,
-        "normalized_text": "Hello hello Python World",
-        "max_frequent_words": [
-            {
-                "word": "hello",
-                "count": 2
-            },
-            {
-                "word": "python",
-                "count": 1
-            },
-            {
-                "word": "world",
-                "count": 1
-            }
-        ],
-        "document_status": "DocumentStatus.SUCCESS"
-    },
-    {
-        "document": {
             "id": "doc-2",
             "text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome"
         },
@@ -56,5 +31,17 @@
             }
         ],
         "document_status": "DocumentStatus.SUCCESS"
+    },
+    {
+        "document": {
+            "id": "doc-3",
+            "text": "   "
+        },
+        "symbol_count": 0,
+        "word_count": 0,
+        "unique_word_count": 0,
+        "normalized_text": "",
+        "max_frequent_words": [],
+        "document_status": "DocumentStatus.FAILED"
     }
 ]

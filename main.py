@@ -19,20 +19,20 @@ def main(*args, **kwargs) -> None:
         for doc in docs:
             try:
                 result = process_document(doc)
+                result_docs.append(result)
                 if result.document_status == DocumentStatus.FAILED:
                     failed += 1
                     raise DocumentProcessorError(doc)
                 else:
                     success += 1
-                    result_docs.append(result)
             except Exception as e:
                 print("Error!!!", e)
             
         writer = JsonWriter()
         writer.write_json(result_docs, output_path)
         print("Successfully wrote", success, "documents.", failed, "were failed!")        
-    except KeyError as e:
-        print("Exception!!! Expected", input_path, "to have a field:", e)
+    except Exception as e:
+        print("Unexpected Exception!!!", e)
         sys.exit(-1)
 
 if __name__ == "__main__":

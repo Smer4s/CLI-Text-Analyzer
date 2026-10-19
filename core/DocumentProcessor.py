@@ -6,7 +6,7 @@ from models.WordCountPair import WordCountPair
 def process_document(doc: Document) -> DocumentProcessorResult:
     doc_status = get_document_status(doc.text)
     if doc_status is DocumentStatus.FAILED:
-        return DocumentProcessorResult(document_status=doc_status)
+        return DocumentProcessorResult(doc,document_status=doc_status)
     normalized_text = normalize_text(doc.text)
     symbol_count = find_symbol_count(normalized_text)
     words = find_words(normalized_text)
