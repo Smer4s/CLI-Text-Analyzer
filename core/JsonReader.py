@@ -2,9 +2,6 @@ import json
 from models.Document import Document
 
 class JsonReader(object):
-    def __init__(self):
-        super(JsonReader, self).__init__()
-
     def read_json(self, path:str) -> list[Document]:
         try:
             with open(path) as f:

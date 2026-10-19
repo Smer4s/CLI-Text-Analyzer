@@ -6,9 +6,8 @@ from core.DocumentProcessor import process_document
 from models.DocumentProcessorResult import DocumentProcessorResult
 from models.DocumentStatus import DocumentStatus
 
-def main(*args, **kwargs) -> None:   
+def main(parser: argparse.ArgumentParser) -> None:   
     try:
-        parser : argparse.ArgumentParser = args[0]
         cli_args : argparse.Namespace = parser.parse_args()
         (input_path, output_path) = (cli_args.i, cli_args.o)
         reader = JsonReader()
@@ -27,6 +26,7 @@ def main(*args, **kwargs) -> None:
                     success += 1
             except Exception as e:
                 print("Error!!!", e)
+                failed +=1
             
         writer = JsonWriter()
         writer.write_json(result_docs, output_path)

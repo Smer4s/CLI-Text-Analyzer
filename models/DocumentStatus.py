@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import StrEnum
 
-class DocumentStatus(Enum):
+class DocumentStatus(StrEnum):
     """Docstring for DocumentStatus."""
     SUCCESS = "Success"
     FAILED = "Failed"
