@@ -1,51 +1,43 @@
-import sys, re
-from models.IOPair import IOPair
-from errors.WrongKwargError import WrongKwargError
-from core.KwargParser import KwargParser
+import argparse, sys
+from errors.DocumentProcessorError import DocumentProcessorError
 from core.JsonReader import JsonReader
 from core.JsonWriter import JsonWriter
-from core.DocumentProcessor import DocumentProcessor
+from core.DocumentProcessor import process_document
 from models.DocumentProcessorResult import DocumentProcessorResult
+from models.DocumentStatus import DocumentStatus
 
-def main(args, kwargs):
-    print("Hello from cli-text-analyzer!", "args: ", args, "kwargs: ", kwargs)
-    
+def main(*args, **kwargs) -> None:   
     try:
-        parser = KwargParser()
-        pair = parser.parse_input(kwargs)
-        input = pair.input_path
+        parser : argparse.ArgumentParser = args[0]
+        cli_args : argparse.Namespace = parser.parse_args()
+        (input_path, output_path) = (cli_args.i, cli_args.o)
         reader = JsonReader()
-        docs = reader.read_json(input)
-        print(docs)
-        processor = DocumentProcessor()
+        docs = reader.read_json(input_path)
+        (success, failed) = (0, 0)
         
         result_docs :list[DocumentProcessorResult]= []
         for doc in docs:
-            result = processor.process_document(doc)
-            result_docs.append(result)
+            try:
+                result = process_document(doc)
+                if result.document_status == DocumentStatus.FAILED:
+                    failed += 1
+                    raise DocumentProcessorError(doc)
+                else:
+                    success += 1
+                    result_docs.append(result)
+            except Exception as e:
+                print("Error!!!", e)
             
         writer = JsonWriter()
-        writer.write_json(result_docs, pair.output_path)
-        
-    except WrongKwargError as e:
-        print("Exception!!! Expected positional argument: ", e.kwarg_name)
-        pass
-    
-def analyze_text():
-    pass
+        writer.write_json(result_docs, output_path)
+        print("Successfully wrote", success, "documents.", failed, "were failed!")        
+    except KeyError as e:
+        print("Exception!!! Expected", input_path, "to have a field:", e)
+        sys.exit(-1)
 
 if __name__ == "__main__":
-    sys_args = sys.argv
-    pattern = "^([A-Za-z].*)=(.*$)"
+    parser = argparse.ArgumentParser(prog='CLI Text Analyzer')
+    parser.add_argument('-i', help='path to input file', required=True)
+    parser.add_argument('-o', help='path to output file', required=True)
     
-    kwargs = dict[str,str]()
-    args = list[str]()
-    for arg in sys_args:
-        if re.match(pattern, arg):
-            groups = [g for g in re.split(pattern,arg) if g != '' ]
-            key, value = groups[0], groups[1]
-            kwargs.update({key:value})
-        else:
-            args.append(arg)
-    
-    main(args, kwargs)
+    main(parser)

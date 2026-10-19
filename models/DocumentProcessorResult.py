@@ -6,10 +6,10 @@ import json
 
 @dataclass
 class DocumentProcessorResult(object):
-    document: Document
-    symbol_count: int
-    word_count: int
-    unique_word_count: int
-    normalized_text: int
-    max_frequent_words: list[WordCountPair]
-    document_status: DocumentStatus
+    document: Document = None
+    symbol_count: int = 0
+    word_count: int = 0
+    unique_word_count: int = 0
+    normalized_text: str = 0
+    max_frequent_words: list[WordCountPair] = None
+    document_status: DocumentStatus = DocumentStatus.FAILED

@@ -1,90 +1,60 @@
 [
     {
-        "py/object": "models.DocumentProcessorResult.DocumentProcessorResult",
         "document": {
-            "py/object": "models.Document.Document",
             "id": "doc-1",
             "text": "   Hello hello Python    World   "
         },
-        "symbol_count": 21,
+        "symbol_count": 24,
         "word_count": 4,
         "unique_word_count": 3,
         "normalized_text": "Hello hello Python World",
         "max_frequent_words": [
             {
-                "py/object": "models.WordCountPair.WordCountPair",
-                "word": "Hello",
-                "count": 1
-            },
-            {
-                "py/object": "models.WordCountPair.WordCountPair",
                 "word": "hello",
+                "count": 2
+            },
+            {
+                "word": "python",
                 "count": 1
             },
             {
-                "py/object": "models.WordCountPair.WordCountPair",
-                "word": "Python",
-                "count": 1
-            },
-            {
-                "py/object": "models.WordCountPair.WordCountPair",
-                "word": "World",
+                "word": "world",
                 "count": 1
             }
         ],
-        "document_status": {
-            "py/reduce": [
-                {
-                    "py/type": "models.DocumentStatus.DocumentStatus"
-                },
-                {
-                    "py/tuple": [
-                        "Success"
-                    ]
-                }
-            ]
-        }
+        "document_status": "DocumentStatus.SUCCESS"
     },
     {
-        "py/object": "models.DocumentProcessorResult.DocumentProcessorResult",
         "document": {
-            "py/object": "models.Document.Document",
             "id": "doc-2",
             "text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome"
         },
-        "symbol_count": 206,
+        "symbol_count": 236,
         "word_count": 31,
         "unique_word_count": 6,
         "normalized_text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome",
         "max_frequent_words": [
             {
-                "py/object": "models.WordCountPair.WordCountPair",
                 "word": "programming",
                 "count": 10
             },
             {
-                "py/object": "models.WordCountPair.WordCountPair",
-                "word": "Async",
+                "word": "async",
                 "count": 5
             },
             {
-                "py/object": "models.WordCountPair.WordCountPair",
                 "word": "is",
                 "count": 5
             },
             {
-                "py/object": "models.WordCountPair.WordCountPair",
                 "word": "awesome",
                 "count": 5
             },
             {
-                "py/object": "models.WordCountPair.WordCountPair",
                 "word": "apple",
                 "count": 4
             }
         ],
-        "document_status": {
-            "py/id": 8
-        }
+        "document_status": "DocumentStatus.SUCCESS"
     }
 ]
