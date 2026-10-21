@@ -7,7 +7,7 @@ import asyncio, time, datetime
 
 async def process_document_async(doc: Document, semaphore: asyncio.Semaphore, delay: float = 0.2) -> DocumentProcessorResult:
     async with semaphore:
-        # print("Started processing", doc.id,"at:",datetime.datetime.time(datetime.datetime.now()))
+        print("Started processing", doc.id,"at:",datetime.datetime.time(datetime.datetime.now()))
         await asyncio.sleep(delay)
         result = process_document(doc)
         return result
