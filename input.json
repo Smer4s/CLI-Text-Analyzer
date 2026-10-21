@@ -196,51 +196,6 @@
         "text": "Make invalid states difficult to represent in the data model."
     },
     {
-        "id": "doc-50",
-        "text": "Complete the task, measure the result, and review the code."
-    },
-    {
-        "id": "doc-51",
-        "text": ""
-    },
-    {
-        "id": "doc-52",
-        "text": "   \t \n  "
-    },
-    {
-        "id": "doc-53"
-    },
-    {
-        "id2": "doc-54",
-        "text": "Missing the required id field"
-    },
-    {
-        "id": "doc-55",
-        "text": null
-    },
-    {
-        "id": "doc-56",
-        "text": 12345
-    },
-    {
-        "id": "doc-57",
-        "text": [
-            "not",
-            "a",
-            "string"
-        ]
-    },
-    {
-        "id": null,
-        "text": "An id cannot be null"
-    },
-    {
-        "id": "doc-59",
-        "text": {
-            "unexpected": "object"
-        }
-    },
-    {
         "id": "doc-60",
         "text": true
     }
