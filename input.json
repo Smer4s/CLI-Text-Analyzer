@@ -1,14 +1,247 @@
 [
     {
-        "id2": "doc-1",
+        "id": "doc-01",
         "text": "   Hello hello Python    World   "
     },
     {
-        "id": "doc-2",
-        "text": "Async programming programming is awesome Async programming programming is rap rap apple apple apple apple awesome Async programming programming is awesome Async programming programming is awesome Async programming programming is awesome"
+        "id": "doc-02",
+        "text": "Async programming programming is awesome. Async programming is powerful!"
     },
     {
-        "id": "doc-3",
-        "text": "   "
+        "id": "doc-03",
+        "text": "Привет, мир! Python умеет обрабатывать Unicode и русский текст."
+    },
+    {
+        "id": "doc-04",
+        "text": "Hello\tPython\nWorld — three words with unusual whitespace."
+    },
+    {
+        "id": "doc-05",
+        "text": "FastAPI builds REST APIs with automatic OpenAPI documentation."
+    },
+    {
+        "id": "doc-06",
+        "text": "Concurrency is not the same thing as parallelism."
+    },
+    {
+        "id": "doc-07",
+        "text": "One two three four five six seven eight nine ten."
+    },
+    {
+        "id": "doc-08",
+        "text": "apple apple banana BANANA cherry cherry cherry"
+    },
+    {
+        "id": "doc-09",
+        "text": "Сегодня хороший день, чтобы изучить асинхронное программирование."
+    },
+    {
+        "id": "doc-10",
+        "text": "Python, C#, Go, Rust and JavaScript are different languages."
+    },
+    {
+        "id": "doc-11",
+        "text": "   Leading and trailing spaces should be normalized.   "
+    },
+    {
+        "id": "doc-12",
+        "text": "Testing makes refactoring less stressful and more predictable."
+    },
+    {
+        "id": "doc-13",
+        "text": "A quick brown fox jumps over a lazy dog."
+    },
+    {
+        "id": "doc-14",
+        "text": "123 456 789 123 456 123"
+    },
+    {
+        "id": "doc-15",
+        "text": "Email: team@example.com. Deadline: Friday at 5 PM."
+    },
+    {
+        "id": "doc-16",
+        "text": "Don't retry every HTTP error; some failures are permanent."
+    },
+    {
+        "id": "doc-17",
+        "text": "Connection pooling helps avoid unnecessary network overhead."
+    },
+    {
+        "id": "doc-18",
+        "text": "Short."
+    },
+    {
+        "id": "doc-19",
+        "text": "The event loop schedules coroutines while they await I/O."
+    },
+    {
+        "id": "doc-20",
+        "text": "Documentation is a tool, not a substitute for understanding."
+    },
+    {
+        "id": "doc-21",
+        "text": "Кошка спит на диване. Кошка просыпается и идёт к миске."
+    },
+    {
+        "id": "doc-22",
+        "text": "こんにちは 世界 Python テスト"
+    },
+    {
+        "id": "doc-23",
+        "text": "Bonjour le monde. Café, résumé et façade."
+    },
+    {
+        "id": "doc-24",
+        "text": "Hola mundo, programación asíncrona y pruebas automáticas."
+    },
+    {
+        "id": "doc-25",
+        "text": "Data classes reduce boilerplate in Python applications."
+    },
+    {
+        "id": "doc-26",
+        "text": "Type hints make code easier to navigate and review."
+    },
+    {
+        "id": "doc-27",
+        "text": "Never block the event loop with a long synchronous sleep."
+    },
+    {
+        "id": "doc-28",
+        "text": "Semaphore limits access to a shared resource."
+    },
+    {
+        "id": "doc-29",
+        "text": "Error handling should preserve the identity of each document."
+    },
+    {
+        "id": "doc-30",
+        "text": "First line.\nSecond line.\nThird line."
+    },
+    {
+        "id": "doc-31",
+        "text": "Tabs\tand\tspaces    should become single separators."
+    },
+    {
+        "id": "doc-32",
+        "text": "UPPERCASE lowercase MixedCase mixedcase"
+    },
+    {
+        "id": "doc-33",
+        "text": "Retry retry retry then success success"
+    },
+    {
+        "id": "doc-34",
+        "text": "The first request failed, but the second one succeeded."
+    },
+    {
+        "id": "doc-35",
+        "text": "Fifty documents are enough to demonstrate bounded concurrency."
+    },
+    {
+        "id": "doc-36",
+        "text": "AI agents often rely on external tools and structured outputs."
+    },
+    {
+        "id": "doc-37",
+        "text": "Models can return invalid JSON, so validation still matters."
+    },
+    {
+        "id": "doc-38",
+        "text": "Latency and throughput measure different aspects of performance."
+    },
+    {
+        "id": "doc-39",
+        "text": "Zero bugs is a goal, not a realistic assumption."
+    },
+    {
+        "id": "doc-40",
+        "text": "Version control lets developers inspect the history of changes."
+    },
+    {
+        "id": "doc-41",
+        "text": "Éléphant naïve coöperate über Straße"
+    },
+    {
+        "id": "doc-42",
+        "text": "Слова слова СЛОВА разные разные РАЗНЫЕ"
+    },
+    {
+        "id": "doc-43",
+        "text": "One-word"
+    },
+    {
+        "id": "doc-44",
+        "text": "Symbols: ! ? , . ; : ( ) [ ] # @"
+    },
+    {
+        "id": "doc-45",
+        "text": "Dates: 2026-10-21, 2027-01-01 and 2030-12-31."
+    },
+    {
+        "id": "doc-46",
+        "text": "Currency values: 10 BYN, 25 USD, and 40 EUR."
+    },
+    {
+        "id": "doc-47",
+        "text": "Observability includes logs, metrics, and traces."
+    },
+    {
+        "id": "doc-48",
+        "text": "A successful batch can contain individual failed items."
+    },
+    {
+        "id": "doc-49",
+        "text": "Make invalid states difficult to represent in the data model."
+    },
+    {
+        "id": "doc-50",
+        "text": "Complete the task, measure the result, and review the code."
+    },
+    {
+        "id": "doc-51",
+        "text": ""
+    },
+    {
+        "id": "doc-52",
+        "text": "   \t \n  "
+    },
+    {
+        "id": "doc-53"
+    },
+    {
+        "id2": "doc-54",
+        "text": "Missing the required id field"
+    },
+    {
+        "id": "doc-55",
+        "text": null
+    },
+    {
+        "id": "doc-56",
+        "text": 12345
+    },
+    {
+        "id": "doc-57",
+        "text": [
+            "not",
+            "a",
+            "string"
+        ]
+    },
+    {
+        "id": null,
+        "text": "An id cannot be null"
+    },
+    {
+        "id": "doc-59",
+        "text": {
+            "unexpected": "object"
+        }
+    },
+    {
+        "id": "doc-60",
+        "text": true
     }
 ]

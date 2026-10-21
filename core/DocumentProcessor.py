@@ -3,6 +3,14 @@ from models.Document import Document
 from models.DocumentProcessorResult import DocumentProcessorResult
 from models.WordCountPair import WordCountPair
 from errors.DocumentProcessorError import DocumentProcessorError
+import asyncio, time, datetime
+
+async def process_document_async(doc: Document, semaphore: asyncio.Semaphore, delay: float = 0.2) -> DocumentProcessorResult:
+    async with semaphore:
+        # print("Started processing", doc.id,"at:",datetime.datetime.time(datetime.datetime.now()))
+        await asyncio.sleep(delay)
+        result = process_document(doc)
+        return result
 
 def process_document(doc: Document) -> DocumentProcessorResult:
     try:
