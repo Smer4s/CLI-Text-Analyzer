@@ -3,8 +3,6 @@ from models.Document import Document
 from models.DocumentProcessorResult import DocumentProcessorResult
 import asyncio
 
-active_tasks_count = 0
-
 async def process_batch(documents: list[Document], max_concurrency: int, delay: float) -> list[DocumentProcessorResult]:
     validate_params(documents,max_concurrency,delay)
     
@@ -15,14 +13,9 @@ async def process_batch(documents: list[Document], max_concurrency: int, delay: 
     return await asyncio.gather(*tasks)
 
 async def run_task_with_semaphore(semaphore: asyncio.Semaphore, max_concurrency: int, task) -> DocumentProcessorResult:
-    global active_tasks_count
     async with semaphore:
-        active_tasks_count += 1
-        try:
-            assert active_tasks_count <= max_concurrency
-            return await task
-        finally:
-            active_tasks_count -= 1
+        return await task
+
 
 def validate_params(documents: list[Document], max_concurrency: int, delay: float) -> None:
     doc_len = len(documents)
